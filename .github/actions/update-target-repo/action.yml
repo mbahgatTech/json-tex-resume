@@ -5,6 +5,8 @@ inputs:
     required: true
   repo-resume-path:
     required: true
+  commit-message:
+    required: true
 
 runs: 
   using: "composite"
@@ -27,6 +29,6 @@ runs:
         git config user.name "GitHub Actions"
         git config user.email "actions@github.com"
         git add .
-        git commit -m "Update resume"
+        git commit -m "${{ inputs.commit-message }}"
         git remote set-url origin ${{ inputs.target-repo }}
         git push
