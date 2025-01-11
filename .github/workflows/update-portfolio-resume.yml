@@ -3,7 +3,7 @@ name: Compile and Deploy Resume
 on:
   push:
     branches:
-      - master
+      - pipeline
 
 jobs:
   build-and-deploy:
