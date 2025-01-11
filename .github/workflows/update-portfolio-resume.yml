@@ -25,6 +25,14 @@ jobs:
           docker run -v ${{ github.workspace }}:/usr/local/resume resume-builder
           sudo chown -R $USER:$USER ${{ github.workspace }}/out
 
+      - name: Cache out directory
+        uses: actions/cache@v3
+        with:
+          path: ${{ github.workspace }}/out
+          key: ${{ runner.os }}-out-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-out-
+
       - name: Deploy Resume to Target Repo
         uses: ./.github/actions/update-target-repo
         with: 
