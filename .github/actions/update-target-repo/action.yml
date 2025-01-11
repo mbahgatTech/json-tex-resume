@@ -17,12 +17,8 @@ runs:
     - name: Copy generated resume to target repository path
       shell: bash
       run: |-
-        if [ ! -d portfolio/${{ inputs.repo-resume-path }} ]; then
-          mkdir -p portfolio/${{ inputs.repo-resume-path }}
-        fi
-
         chmod +xwr ${{ github.workspace }}/out/resume.pdf
-        cp ${{ github.workspace }}/out/resume.pdf portfolio/${{ inputs.repo-resume-path }}
+        install -D ${{ github.workspace }}/out/resume.pdf portfolio/${{ inputs.repo-resume-path }}
 
     - name: Commit and push to target repository
       shell: bash
