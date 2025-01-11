@@ -19,6 +19,7 @@ jobs:
 
       - name: Run Docker container to generate resume
         run: |
+          ls
           chmod +x ./compile_resume.sh
           docker run -v ${{ github.workspace }}:/usr/local/resume resume-builder
           sudo chown -R $USER:$USER ${{ github.workspace }}/out
