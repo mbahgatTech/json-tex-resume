@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-and-deploy:
-    if: github.actor != 'actions-user'
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     permissions: write-all
 
