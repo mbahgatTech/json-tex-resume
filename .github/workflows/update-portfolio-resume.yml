@@ -1,0 +1,30 @@
+name: Compile and Deploy Resume
+
+on:
+  push:
+    branches:
+      - pipeline
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions: write-all
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Build Docker image
+        run: docker build -t resume-builder ${{ github.workspace }}
+
+      - name: Run Docker container to generate resume
+        run: |
+          chmod +x ./compile_resume.sh
+          docker run -v ${{ github.workspace }}:/usr/local/resume resume-builder
+          sudo chown -R $USER:$USER ${{ github.workspace }}/out
+
+      - name: Deploy Resume to Target Repo
+        uses: ./.github/actions/update-target-repo
+        with: 
+          target-repo: https://x-access-token:${{ secrets.TARGET_REPO_PAT }}@github.com/${{ vars.GIITHUB_OWNER_REPO }}.git
+          repo-resume-path: ${{ vars.REPO_RESUME_PATH }}
