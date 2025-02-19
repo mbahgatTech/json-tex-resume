@@ -1,8 +1,15 @@
 [
     {
-        "sectionName": "Professional Summary",
+        "sectionName": "Summary",
         "subheadings": [
-            {}
+            {
+                "resumeItems": [
+                    "\\textbf{Languages}: Python, JavaScript, Java, C++, Go, SQL, TypeScript.",
+                    "\\textbf{Frameworks and Libraries}: Django, Flask, React, Node.js, TensorFlow, PyTorch.",
+                    "\\textbf{Tools and Platforms}: AWS, GCP, Docker, Kubernetes, Jenkins, Terraform.",
+                    "\\textbf{Techniques}: Machine Learning, Data Engineering, Cloud Architecture, Distributed Systems, Microservices."
+                ]
+            }
         ]
     },
     {
