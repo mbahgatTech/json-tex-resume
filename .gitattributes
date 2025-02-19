@@ -1,9 +1,1 @@
-# * text eol=lf
-
-# # Override for specific file extensions to keep their original line endings
-# *.pdf -text
-# *.bin -text
-# *.jpg -text
-# *.png -text
-# *.exe -text
-# *.tex -text
+* text eol=lf
