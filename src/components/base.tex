@@ -1,6 +1,8 @@
 \documentclass[letterpaper,11pt]{article}
 
 \usepackage{latexsym}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
 \usepackage{marvosym}
@@ -45,8 +47,8 @@
 
 \newcommand{\resumeItem}[1]{
   \item\small{
-    {#1 \vspace{-2pt}}
-  }
+    {#1\vspace{-2pt}}%
+  }%
 }
 
 \newcommand{\resumeSubheading}[4]{

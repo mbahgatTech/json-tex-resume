@@ -55,6 +55,8 @@ The resume sections are defined in the [sections.json](./config/sections.json) f
 
 > These fields are also optional, except for a first or last name.
 
+Contact details are rendered as plain text (no icons) so ATS parsers can read them: a line with the address, phone and email, followed by a line of links: `linkedin.com/in/<linkedin>`, `github.com/<github>` and `<portfolio>`. Empty fields are left out.
+
 ### Embedding LaTeX
 
 You might want to change the formatting of some text on your resume like bolding important figures or changing color of some parts of the content. 
